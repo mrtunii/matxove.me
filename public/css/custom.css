@@ -1,0 +1,20 @@
+@font-face {
+    font-family: NinoBold;
+    src: url(../fonts/bpg_nino_mtavruli_bold.otf);
+}
+
+
+@font-face {
+    font-family: NinoNormal;
+    src: url(../fonts/bpg_nino_mtavruli_normal.ttf);
+}
+
+
+
+.ninobold {
+    font-family: NinoBold !important;
+}
+
+.ninonormal {
+    font-family: NinoNormal !important;
+}
