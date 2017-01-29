@@ -10,10 +10,10 @@
             <ol class="cart-item">
                 @foreach(Auth::user()->borrowed_products as $product)
                     <li>
-                        <div class="thumb"><img src="{{ $product->main_image }}" alt=""></div>
+                        <div class="thumb"><img src="{{ $product->image }}" alt=""></div>
                         <div class="cart-delete"><a href="#"><i class="fa fa-times"></i></a></div>
                         <div class="cart-detail">
-                            <h3 class="product-name"><a href="product.html">{{ $product->title }}</a></h3>
+                            <h3 class="product-name"><a href="/item/{{ $product->id }}">{{ $product->title }}</a></h3>
                             <div class="price"><span>დაბრუნება</span> {{ $product->returndate }}</div>
                         </div>
                     </li>
@@ -26,10 +26,10 @@
             <ol class="cart-item">
                 @foreach(Auth::user()->products()->isborrowed()->get() as $product)
                     <li>
-                        <div class="thumb"><img src="{{ $product->main_image }}" alt=""></div>
+                        <div class="thumb"><img src="{{ $product->image }}" alt=""></div>
                         <div class="cart-delete"><a href="#"><i class="fa fa-times"></i></a></div>
                         <div class="cart-detail">
-                            <h3 class="product-name"><a href="product.html">{{ $product->title }}</a></h3>
+                            <h3 class="product-name"><a href="/item/{{ $product->id }}">{{ $product->title }}</a></h3>
                             <div class="price"><span>დაბრუნება</span> {{ $product->returndate }}</div>
                             <div class="price"><span>{{ $product->b_user->firstname.' '.$product->b_user->lastname }}</span></div>
                         </div>

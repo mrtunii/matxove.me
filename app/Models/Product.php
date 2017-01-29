@@ -10,7 +10,7 @@ class Product extends Model
 {
 
     protected $appends = [
-      'returndate'
+      'returndate', 'image'
     ];
 
     protected $fillable = [
@@ -46,6 +46,16 @@ class Product extends Model
     public static function lastadded()
     {
         return self::NotBorrowed()->orderBy('id','desc')->take('4')->get();
+    }
+
+    public function getImageAttribute()
+    {
+        return $this->main_image == null ? 'http://sigmalambdabeta.com/wp-content/plugins/special-recent-posts/images/no-thumb.png' : $this->main_image;
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
     }
 
 }

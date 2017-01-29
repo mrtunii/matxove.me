@@ -34,13 +34,19 @@
 <body>
 <div id="main">
     @if( \Request::route()->getName() != 'login')
+
         @include('partials.left_side')
+
         @include('partials.right_side')
+
     @endif
     <div id="page">
         <div class="top-navbar">
                 @if( \Request::route()->getName() != 'login')
-                    <div class="top-navbar-left"><a href="#" id="menu-left" data-activates="slide-out-left"><i class="fa fa-bars"></i></a></div>
+                    <div class="top-navbar-left">
+                        <a href="#" id="menu-left" data-activates="slide-out-left"><i class="fa fa-bars"></i></a>
+                        <a href="#" style="color:#F44336"><i class="fa fa-plus-circle"></i></a>
+                    </div>
                 <div class="top-navbar-right">
                     <a href="#" class="dropdown-button" data-activates="dropdown1"><i class="fa fa-user"></i></a>
                     <ul id="dropdown1" class="dropdown-content">
