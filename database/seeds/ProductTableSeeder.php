@@ -14,8 +14,8 @@ class ProductTableSeeder extends Seeder
         $product = new \App\Models\Product();
         $product->title = 'დრელი';
         $product->description = 'კარგი დრელია';
-        $product->borrower_id = 2;
-        $product->user_id = 3;
+        $product->borrower_id = \App\Models\User::where('email','gio@gmail.com')->first()->id;
+        $product->user_id = \App\Models\User::where('email','otarmames@gmail.com')->first()->id;
         $product->borrow_date = \Carbon\Carbon::now();
         $product->main_image = 'https://www.boschtools.com/us/en/ocsmedia/optimized/full/HDB180_Hero.png';
         $product->category_id = 1;
@@ -24,8 +24,8 @@ class ProductTableSeeder extends Seeder
         $product = new \App\Models\Product();
         $product->title = 'მეორე კარგი დრელი';
         $product->description = 'კარგი დრელია';
-        $product->borrower_id = 3;
-        $product->user_id = 2;
+        $product->borrower_id = \App\Models\User::where('email','otarmames@gmail.com')->first()->id;
+        $product->user_id = \App\Models\User::where('email','gio@gmail.com')->first()->id;
         $product->borrow_date = \Carbon\Carbon::now();
         $product->main_image = 'http://www.lampertlumber.com/wp-content/uploads/2015/03/Blog.png';
         $product->category_id = 1;
