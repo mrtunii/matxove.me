@@ -50,12 +50,17 @@ class Product extends Model
 
     public function getImageAttribute()
     {
-        return $this->main_image == null ? 'http://sigmalambdabeta.com/wp-content/plugins/special-recent-posts/images/no-thumb.png' : $this->main_image;
+        return $this->main_image == null || $this->main_image == '' ? 'http://sigmalambdabeta.com/wp-content/plugins/special-recent-posts/images/no-thumb.png' : $this->main_image;
     }
 
     public function category()
     {
         return $this->belongsTo('App\Models\Category');
+    }
+
+    public function scopeNotThis($query,$id)
+    {
+        return $query->where('id','!=',$id);
     }
 
 }

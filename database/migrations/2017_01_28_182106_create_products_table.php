@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('day_count')->default(1);
             $table->longText('description')->nullable();
-            $table->integer('borrower_id')->unsigned();
+            $table->integer('borrower_id')->unsigned()->nullable();
             $table->integer('status_id')->default(1);
             $table->dateTime('return_date')->nullable();
             $table->text('main_image')->nullable();

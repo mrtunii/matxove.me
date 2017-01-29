@@ -15,6 +15,14 @@
                 <div class="price"><span style="color: #F44336;">ითხოვა <a href="/user/{{ $product->borrower_id }}"> {{ $product->b_user->firstname }}  {{ $product->b_user->lastname }}</a> -მ(ა)</span></div>
                     @else
                     <div class="availability in-stock">ხელმსაწვდომია</div>
+
+                    <div class="availability in-stock">დაბრუნების დრო: {{ \Carbon\Carbon::now()->addDay($product->day_count)->toDateString() }}</div>
+
+                    <div>მობილური: <a href="callto:{{ $product->user->mobile }}">{{ $product->user->mobile }}</a></div>
+
+                    <div>მისამართი: {{ $product->user->address }}</div>
+
+
                 @endif
 
             </div>
@@ -74,10 +82,10 @@
             <ol class="product-list">
                 @foreach($similar_products as $item)
                     <li class="ninonormal">
-                        <div class="thumb"><a href="/item/{{ $item->id }}"><img src="{{ $item->$image }}" alt=""></a></div>
+                        <div class="thumb"><a href="/item/{{ $product->id }}"><img src="{{ $product->image }}" alt=""></a></div>
                         <div class="product-ctn">
-                            <div class="product-name"><a href="product.html">{{ $item->title }}</a></div>
-                            <div class="price"><span class="price-before">$ 68.00</span><span class="price-current">$ 62.22</span></div>
+                            <div class="product-name"><a href="product.html">{{ $product->title }}</a></div>
+                            <div class="price"><span style="color: #000">განათხოვრება </span><span class="price-current">{{ $product->day_count }}</span> <span style="color: #000"> დღით </span></div>
                         </div>
                     </li>
                 @endforeach
