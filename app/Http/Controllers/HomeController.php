@@ -25,8 +25,7 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-
+    {   return redirect('/categories');
         return view('home')->with('last_products', Product::lastadded())->with('categories', Category::all());
     }
 }

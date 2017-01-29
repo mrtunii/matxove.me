@@ -30,48 +30,15 @@
         <div class="product-tabs">
             <ul class="tabs ninobold">
                 <li class="tab"><a class="active" href="#detail">დეტალები</a></li>
-                <li class="tab"><a href="#review">შეფასებები</a></li>
             </ul>
         </div>
         <div class="product-content">
             <div class="tab-content" id="detail">
                 {!! $product->description !!}
             </div>
-            <div class="tab-content" id="review">
-                <ol class="product-review-list">
-                    <li>
-                        <div class="review-idty">
-                            <div class="name">Andriy Sheva</div>
-                            <div class="product-rating"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                        <div class="review-ctn">awesome product</div>
-                    </li>
-                    <li>
-                        <div class="review-idty">
-                            <div class="name">Carlos de Mello</div>
-                            <div class="product-rating"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></div>
-                        </div>
-                        <div class="review-ctn">The product has come softly, thank you maleo.</div>
-                    </li>
-                    <li>
-                        <div class="review-idty">
-                            <div class="name">Jackson Thiago</div>
-                            <div class="product-rating"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                        <div class="review-ctn">No one doubt about quality of this product. Congratulations for all.</div>
-                    </li>
-                    <li>
-                        <div class="review-idty">
-                            <div class="name">Melanie Ricardo</div>
-                            <div class="product-rating"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                        </div>
-                        <div class="review-ctn">Only one thing, please give us some explanation more.</div>
-                    </li>
-                </ol>
-            </div>
         </div>
         @if($product->status_id != config('custom.status.borrowed') && ($product->borrower_id == null || $product->borrower_id == 0))
-        <div class="product-action margin-bottom ninobold"><h2><a class="btn green btn-block margin-bottom_low" href="#"> მათხოვე </a></h2></div>
+        <div class="product-action margin-bottom ninobold"><h2><a class="btn green btn-block margin-bottom_low" href="#" onclick="alert('More Functions Coming Soon')"> მათხოვე </a></h2></div>
 
         <div class="product-share"><a href="#" class="fb"><i class="fa fa-facebook"></i></a><a href="#" class="tw"><i class="fa fa-twitter"></i></a><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a><a href="#" class="pint"><i class="fa fa-pinterest"></i></a></div>
         @endif

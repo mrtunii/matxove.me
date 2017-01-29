@@ -33,9 +33,7 @@
                 <div class="top-navbar-right">
                     <a href="#" class="dropdown-button" data-activates="dropdown1"><i class="fa fa-user"></i></a>
                     <ul id="dropdown1" class="dropdown-content">
-                        <li><a href="panel-account.html"><i class="fa fa-server"></i> Panel Account</a></li>
-                        <li><a href="form-account.html"><i class="fa fa-user"></i> My Profile</a></li>
-                        <li><a href="order-history.html"><i class="fa fa-history"></i> Order History</a></li>
+                        <li><a href="/me/items" class="ninonormal"><i class="fa fa-server"></i>ჩემი ნივთები</a></li>
                         <li class="divider"></li>
                         <li><a onclick=" document.getElementById('logout_form').submit()" class="ninonormal"><i class="fa fa-sign-out"></i> გამოსვლა</a></li>
                     </ul>
@@ -45,8 +43,6 @@
                     <div class="site-title">
                     <a href="/"><img src="/images/logo.png" style="margin-top: 2px !important;"></a>
                     </div>
-
-
         </div>
 
         @yield('content')
