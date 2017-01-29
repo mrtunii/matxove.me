@@ -14,8 +14,7 @@ class ProductController extends Controller
     {
 
         $product = Product::with('user')->with('b_user')->with('category')->findOrFail($id);
-        $similar_product =  Product::where('category_id',$product->category_id)->NotThis($id)->NotBorrowed()->take(4)->get();
-        return view('product.show')->with('product',$product)->with('similar_products',$similar_product);
+        return view('product.show')->with('product',$product);
     }
 
     public function add()

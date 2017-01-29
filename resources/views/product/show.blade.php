@@ -43,24 +43,7 @@
         <div class="product-share"><a href="#" class="fb"><i class="fa fa-facebook"></i></a><a href="#" class="tw"><i class="fa fa-twitter"></i></a><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a><a href="#" class="pint"><i class="fa fa-pinterest"></i></a></div>
         @endif
         <div class="line"></div>
-        @if($similar_products->count() > 0)
-        <div class="page-block">
-            <h2 class="block-title ninobold"><span>შეიძლება დაგაინტერესოთ</span></h2>
-            <ol class="product-list">
-                @foreach($similar_products as $item)
-                    <li class="ninonormal">
-                        <div class="thumb"><a href="/item/{{ $product->id }}"><img src="{{ $product->image }}" alt=""></a></div>
-                        <div class="product-ctn">
-                            <div class="product-name"><a href="product.html">{{ $product->title }}</a></div>
-                            <div class="price"><span style="color: #000">განათხოვრება </span><span class="price-current">{{ $product->day_count }}</span> <span style="color: #000"> დღით </span></div>
-                        </div>
-                    </li>
-                @endforeach
 
-            </ol>
-            <div class="clear"></div>
-        </div>
-            @endif
     </div>
 
 @stop
